@@ -3,10 +3,10 @@
 import numpy as np
 import cv2
 
-face_cascade = cv2.CascadeClassifier('/home/aashray/catkin_ws/src/ros_live/haar_cascades/frontalface.xml')
-eyes_cascade = cv2.CascadeClassifier('/home/aashray/catkin_ws/src/ros_live/haar_cascades/eye.xml')
+face_cascade = cv2.CascadeClassifier('/home/user/haar_cascades/frontalface.xml')
+eyes_cascade = cv2.CascadeClassifier('/home/user/haar_cascades/eye.xml')
         
-img_original = cv2.imread('/home/aashray/catkin_ws/src/ros_live/faces.jpg')
+img_original = cv2.imread('/home/user/img.jpg')#Enter the location of the photo
   
 
 img_original = cv2.resize(img_original,(500,300))
