@@ -4,8 +4,8 @@ import numpy as np
 import cv2
 import time
 
-face_cascade = cv2.CascadeClassifier('/home/aashray/catkin_ws/src/ros_live/haar_cascades/frontalface.xml')
-eyes_cascade = cv2.CascadeClassifier('/home/aashray/catkin_ws/src/ros_live/haar_cascades/eye.xml')
+face_cascade = cv2.CascadeClassifier('/home/user/haar_cascades/frontalface.xml')
+eyes_cascade = cv2.CascadeClassifier('/home/user/haar_cascades/eye.xml')
 roi=None
 
 def detect_face_and_eyes(image_frame):
@@ -38,7 +38,7 @@ def detect_face_and_eyes(image_frame):
 
 def main():
     #video_capture = cv2.VideoCapture(0)  #for live tracking
-    video_capture = cv2.VideoCapture('/home/aashray/Downloads/Bday_many.mp4') #for tracking in a recorded video
+    video_capture = cv2.VideoCapture('video_path') #add video path for tracking in a recorded video
 
     while(True):
         ret, frame = video_capture.read()
