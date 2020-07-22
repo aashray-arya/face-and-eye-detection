@@ -4,17 +4,14 @@ import numpy as np
 import cv2
 import time
 
-face_cascade = cv2.CascadeClassifier('/home/aashray/catkin_ws/src/ros_live/haar_cascades/frontalface.xml')
-#eyes_cascade = cv2.CascadeClassifier('/home/aashray/catkin_ws/src/ros_live/haar_cascades/eye.xml')
+face_cascade = cv2.CascadeClassifier('/home/user/haar_cascades/frontalface.xml')
+eyes_cascade = cv2.CascadeClassifier('/home/user/haar_cascades/eye.xml')
         
 def detect_face_and_eyes(image_frame):
 
 	img_original=image_frame
 	
-	img=image_frame
-	# img_original = cv2.resize(img_original,(500,300))
-
-	# img = cv2.resize(img_original,(500,300))       
+	img=image_frame    
 
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -30,10 +27,10 @@ def detect_face_and_eyes(image_frame):
 		cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)  
 		roi = img[y:y+h, x:x+w]
 
-	# eyes = eyes_cascade.detectMultiScale(roi)
+	 eyes = eyes_cascade.detectMultiScale(roi)
 	
-	# for (ex,ey,ew,eh) in eyes:
-	# 	cv2.rectangle(roi, (ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+	 for (ex,ey,ew,eh) in eyes:
+	 	cv2.rectangle(roi, (ex,ey),(ex+ew,ey+eh),(0,255,0),2)
 
 	cv2.imshow('Face_original',img_original)
 	cv2.imshow('Face',img)
