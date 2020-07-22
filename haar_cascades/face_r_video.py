@@ -40,7 +40,7 @@ def detect_face_and_eyes(image_frame):
 
 def main():
     #video_capture = cv2.VideoCapture(0)  #for live tracking
-    video_capture = cv2.VideoCapture('/home/aashray/Downloads/Bday_many.mp4') #for tracking in a recorded video
+    video_capture = cv2.VideoCapture('video_path') #for tracking in a recorded video
 
     while(True):
         ret, frame = video_capture.read()
